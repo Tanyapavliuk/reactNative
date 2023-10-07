@@ -7,19 +7,23 @@ import {
   Pressable,
   KeyboardAvoidingView,
   Platform,
-  Alert,
 } from "react-native";
+
+import { useNavigation } from "@react-navigation/native";
 
 const RegistrForm = () => {
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigation = useNavigation();
+
   const handleSubmit = () => {
     if (!login || !email || !password) {
       return;
     }
-    Alert.alert(`${login}, ${email}, ${password}`);
+    console.log(`${login}, ${email}, ${password}`);
+    navigation.navigate("Home");
   };
 
   const styles = StyleSheet.create({

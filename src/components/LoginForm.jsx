@@ -7,7 +7,6 @@ import {
   Pressable,
   KeyboardAvoidingView,
   Platform,
-  Alert,
 } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
@@ -22,7 +21,7 @@ const LoginForm = () => {
     if (!email || !password) {
       return;
     }
-    Alert.alert(` ${email}, ${password}`);
+    console.log(` ${email}, ${password}`);
     navigation.navigate("Home");
   };
 
